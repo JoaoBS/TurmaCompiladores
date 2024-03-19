@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<style>
+table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  background-color: #A0A0A0;
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <title>minha página web</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <section>
+        <h2>Participantes</h2>
+        <br>
+        <table style="width:100%">
+            <tr>
+                {%for header in headings%}
+                  <th>{{ header }}</th>
+                {%endfor%}
+            </tr>
+                {% for row in data %}
+            <tr>
+                {% for cell in row%}
+                <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+    <br><br><br><br>
+
+    <div>
+        <a href="/logado">Voltar</a>
+    </div>
+
+</body>
+</html>
